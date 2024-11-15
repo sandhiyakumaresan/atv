@@ -1,0 +1,48 @@
+1.
+function createHelloWorld() {
+    return function() {
+        return "Hello World";
+    };
+}
+
+2.function createCounter(init) {
+    let current = init; 
+
+    return {
+        increment: function() {
+            current += 1;
+            return current;
+        },
+        decrement: function() {
+            current -= 1;
+            return current;
+        },
+        reset: function() {
+            current = init;
+            return current;
+        }
+    };
+}
+3.
+function filterArray(arr, fn) {
+    const filteredArr = []; 
+    for (let i = 0; i < arr.length; i++) {
+      
+        if (fn(arr[i], i)) {
+            
+            filteredArr.push(arr[i]);
+        }
+}
+    return filteredArr;
+}
+
+4.
+function argumentsLength() {
+    return arguments.length;
+}
+
+5.
+function sumPromises(promise1, promise2) {
+    return Promise.all([promise1, promise2])
+        .then(([result1, result2]) => result1 + result2);
+}
